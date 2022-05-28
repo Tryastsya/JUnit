@@ -17,9 +17,11 @@ package com.test.class02;
 
 
 import com.main.Calculator;
+import com.test.group.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 public class DivTest {
     Calculator c;
@@ -29,6 +31,7 @@ public class DivTest {
         c = new Calculator();
     }
 
+    @Category({CriticalTest.class, ChiragTest.class})
     @Test
     public void verifyWithTwoPositive1(){
         int expResult = 1;
@@ -37,6 +40,7 @@ public class DivTest {
 
     }
 
+    @Category({SmokeTest.class, OlehTest.class})
     @Test
     public void verifyWithTwoPositive2(){
         int expResult = 5;
@@ -44,6 +48,7 @@ public class DivTest {
         Assert.assertEquals(expResult, actResult);
     }
 
+    @Category({WIPTest.class, ChiragTest.class})
     @Test
     public void verifyWithTwoPositive3(){
         int expResult = 0;
@@ -51,6 +56,7 @@ public class DivTest {
         Assert.assertEquals(expResult, actResult);
     }
 
+    @Category({CriticalTest.class, WIPTest.class})
     @Test
     public void verifyWithTwoNegatives(){
         int expResult = 5;
@@ -58,6 +64,7 @@ public class DivTest {
         Assert.assertEquals(expResult, actResult);
     }
 
+    @Category({SmokeTest.class, CriticalTest.class})
     @Test
     public void verifyWithOnePositiveAndOneNegative1(){
         int expResult = -3;
@@ -65,6 +72,7 @@ public class DivTest {
         Assert.assertEquals(expResult, actResult);
     }
 
+    @Category({OlehTest.class, ChiragTest.class})
     @Test
     public void verifyWithTwoZeros(){
         int expResult = 0;

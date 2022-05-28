@@ -16,9 +16,11 @@ package com.test.class02;
 
 
 import com.main.Calculator;
+import com.test.group.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 public class MulTest {
     Calculator c;
@@ -28,6 +30,7 @@ public class MulTest {
         c = new Calculator();
     }
 
+    @Category({SmokeTest.class, ChiragTest.class})
     @Test
     public void verifyWithOneZeroAndOnePositive(){
         int expResult = 0;
@@ -36,6 +39,7 @@ public class MulTest {
 
     }
 
+    @Category({OlehTest.class, CriticalTest.class})
     @Test
     public void verifyWithTwoZeros(){
         int expResult = 0;
@@ -43,6 +47,7 @@ public class MulTest {
         Assert.assertEquals(expResult, actResult);
     }
 
+    @Category({SmokeTest.class, WIPTest.class})
     @Test
     public void verifyWithOnePositiveAndOneNegative(){
         int expResult = -30;
